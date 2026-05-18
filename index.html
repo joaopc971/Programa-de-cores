@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+ 
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Página de cores</title>
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f0f0f0;
+    }
+ 
+    header {
+      background: #333;
+      color: white;
+      padding: 15px;
+      text-align: center;
+    }
+ 
+    nav a {
+      color: white;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+ 
+    nav a:hover {
+      text-decoration: underline;
+    }
+ 
+    main {
+      padding: 20px;
+    }
+ 
+    section {
+      margin-bottom: 40px;
+      background: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+ 
+    h2 {
+      margin-top: 0;
+    }
+ 
+    .caixa {
+      width: 200px;
+      height: 100px;
+      margin-top: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+ 
+    input {
+      display: block;
+      margin-top: 10px;
+      padding: 5px;
+      width: 200px;
+    }
+  </style>
+</head>
+ 
+<body>
+  <!--Menu-->
+  <header>
+    <h1>Cores</h1>
+    <nav>
+      <a href="cores.html">Exemplo de cores</a>
+    </nav>
+  </header>
+ 
+  <main>
+    <!--Hex-->
+    <section>
+      <h2>Hexadecimal (#RRGGBB)</h2>
+      <p>
+        Digite um valor hexadecimal (ex: <code>#ff0000</code>,
+        <code>#00ff00</code> ):
+      </p>
+      <input type="text" id="hexInput" placeholder="#000000" />
+      <div class="caixa" id="hexBox"></div>
+    </section>
+ 
+    <!--RGB-->
+    <section>
+      <h2>RGB</h2>
+      <p>Digite valores RGB (ex: <code>rgb(255,0,0)</code> ):</p>
+      <input type="text" id="rgbInput" placeholder="#rgb(0,0,0)" />
+      <div class="caixa" id="rgbBox"></div>
+    </section>
+ 
+    <!--RGBA-->
+    <section>
+      <h2>RGBA (com transparência)</h2>
+      <p>Digite valores RGBA (ex: <code>rgba(255,0,0,0.5)</code> ):</p>
+      <input type="text" id="rgbaInput" placeholder="#rgba(0,0,0,0.5)" />
+      <div class="caixa" id="rgbaBox"></div>
+    </section>
+ 
+    <!--HSL-->
+    <section>
+      <h2>HSL (hue, saturation, lightness)</h2>
+      <p>Digite valores HSL (ex: <code>hsl(120,100%,50%)</code> ):</p>
+      <input type="text" id="hslInput" placeholder="#hsl(0,0%,0%)" />
+      <div class="caixa" id="hslBox"></div>
+    </section>
+ 
+    <!--HSLA-->
+    <section>
+      <h2>HSLA (Com transparência)</h2>
+      <p>Dgite valores HSLA (ex: <code>hsla(120,100%,50%,0.3)</code> ):</p>
+      <input type="text" id="hslaInput" placeholder="#hsla(0,0%,0%,0.5)" />
+      <div class="caixa" id="hsla"></div>
+    </section>
+  </main>
+ 
+   <script>
+        //começa o javascript dentro da pagina
+        //procura no html o elemento que tem o id "hexInput"
+        document.getElementById("hexInput")
+ 
+        //adiciona um evento no input
+        //"input" acontece sempre que o usuario muda o texto do campo
+        .addEventListener("input", function(){
+            //procura a caixa que tem o id "hexBox"
+            document.getElementById("hexBox").style.backgroundColor = this.value;
+            //"this.value" é o texto digitado no input atual
+        });
+ 
+        //procura no html o campo com id "rgbInput"
+        document.getElementById("rgbInput").addEventListener("input", function(){
+            document.getElementById("rgbBox").style.backgroundColor = this.value;
+        });
+ 
+        document.getElementById("rgbaInput").addEventListener("input", function(){
+            document.getElementById("rgbaBox").style.backgroundColor = this.value;
+        });
+        document.getElementById("hslInput").addEventListener("input", function(){
+            document.getElementById("hslBox").style.backgroundColor = this.value;
+        });
+ 
+        document.getElementById("hslaInput").addEventListener("input", function(){
+            document.getElementById("hsla").style.backgroundColor = this.value;
+        });
+    </script>
+</body>
+</html>
+ 
+ 
